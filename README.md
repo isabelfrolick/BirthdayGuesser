@@ -1,10 +1,10 @@
 # GuessMaster Game
 
-**GuessMaster** is an interactive console game where the user tries to guess the birthday of a person (celebrity, historical figure, or fictional character). 
+This repository contains three versions of **GuessMaster**, a console-based game where users guess the birthdays of people. Each version adds features and complexity beyond the previous one.
 
 ---
 
-## ✨ Overview
+## 1️Basic Version (`basic/`)
 
 The game mechanics are as follows:
 
@@ -34,11 +34,41 @@ The game mechanics are as follows:
 
 ---
 
-## How to Run
+## 2️Extended Version (`extended/`)
 
-Compile the program:
+Building upon the basic version, this iteration adds:
 
-```bash
-g++ -std=c++11 GuessMaster.cpp -o GuessMaster
-./GuessMaster
-```
+- **Random selection** of the person to guess from an array of stored people.
+- **Granular feedback** on incorrect guesses:
+  - `"Incorrect. Try an earlier day."`  
+  - `"Incorrect. Try a later month."`  
+- **Scoring system**:
+  - Points awarded when the user guesses correctly, based on difficulty of the person.
+- Same input and exit mechanics as the basic version.
+- Designed for better user engagement and challenge.
+
+---
+
+## 3 Advanced Version ('advanced/')
+
+### Date Class Enhancements
+- Implements `Comparable` and `Cloneable`.
+- Replaces copy constructor with a **better clone method**.
+- `compareTo()` replaces detailed day/month/year checks:
+
+### Person and Guessable Classes
+- `Person` abstract class:
+  - Removed difficulty, start/closing messages, and point methods for reusability.
+- `Guessable` interface:
+  - `compareTo()` sorts by age, then name alphabetically.
+  - Contains clone, startMessage, closingMessage, and scoring logic.
+
+### Game Logic Improvements (GuessMaster3)
+- Uses a `HashSet<GuessablePerson>` to store people, ensuring uniqueness.
+- Iterates through players using an `Iterator`.
+
+### Additional Features
+- Eliminates random selection of people.
+- Fully supports extensible object-oriented design for future enhancements.
+- Uses encapsulation and clone methods to prevent privacy leaks.
+- More maintainable and readable game code.
