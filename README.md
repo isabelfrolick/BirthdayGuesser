@@ -4,7 +4,7 @@ This repository contains three versions of **GuessMaster**, a console-based game
 
 ---
 
-## 1️Basic Version (`basic/`)
+## 1️Simple Version (`simple/`)
 
 The game mechanics are as follows:
 
